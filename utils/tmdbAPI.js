@@ -5,7 +5,7 @@
 
 const axios = require('axios');
 
-const TMDB_API_KEY = process.env.TMDB_API_KEY || 'YOUR_TMDB_API_KEY_HERE';
+const TMDB_API_KEY = process.env.TMDB_API_KEY || 'a8ee12ce091523fc386f4dc6d0dbe04d';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const IMAGE_BASE = 'https://image.tmdb.org/t/p/w500';
 
@@ -15,7 +15,7 @@ class TMDBAPI {
     }
 
     getApiKey() {
-        if (!this.apiKey || this.apiKey === 'YOUR_TMDB_API_KEY_HERE') {
+        if (!this.apiKey || this.apiKey === 'a8ee12ce091523fc386f4dc6d0dbe04d') {
             throw new Error('TMDB API key not configured. Set TMDB_API_KEY in .env');
         }
         return this.apiKey;
