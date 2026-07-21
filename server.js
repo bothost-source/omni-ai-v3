@@ -1340,8 +1340,8 @@ async function handleImageCommand(ctx, prompt) {
       } catch (imageAIError) {
         await appendLog(botCtx.from.id, 'image_ai_fallback_error', imageAIError.message);
       }
-      const imageUrl = await generateImageWithFluxApi(prompt);
-        return sendImageUrl(botCtx, imageUrl, `done ✨\n${prompt.slice(0, 500)}`)
+      const fluxImageUrl = await generateImageWithFluxApi(prompt);
+       return sendImageUrl(botCtx, fluxImageUrl, `done ✨\n${prompt.slice(0, 500)}`);
     }
   } catch (error) {
     await appendLog(botCtx.from.id, 'image_generate_error', error.message);
